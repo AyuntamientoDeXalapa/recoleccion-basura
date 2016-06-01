@@ -9,8 +9,8 @@ class Api extends Model
     //
     public static function requestApi($url)
     {
-        $login 		= 'carlosarturo.medina5';
-		$password 	= 'eemcptDBGPE2015'; 
+        $login 		= $_ENV['TELCEL_API_USERNAME'];
+		$password 	= $_ENV['TELCEL_API_PASSWORD']; 
 		$ch 		= curl_init();
 		
 		// Librería CURL para hacer el llamado de la url por el protocolo HTTP con usuario y contraseña
