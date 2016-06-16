@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^recoleccionbasura.com$
+    RewriteRule ^$ http://recoleccionbasura.com/api [L,R=301]
+</IfModule>

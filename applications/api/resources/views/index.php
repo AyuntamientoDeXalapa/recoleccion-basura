@@ -3,21 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bienvenido al API de camiones de basura de Xalapa</title>
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <title>API de camiones de basura de Xalapa</title>
 </head>
 <body>
-    <h1>Métodos del API de camiones de basura del H. Ayuntamiento de Xalapa</h1>
+
+    <h1>Descripción general</h1>
     
     <p>API diseñada para que cualquier aplicación pueda hacer uso de sus métodos; todas las respuestas son devueltas en formato JSON.
     <br>
     A continuación los métodos disponibles en la versión 1:</p>    
     
-    <h3>Obtener los grupos de vehículos</h3>
+    <ul>
+        <li>
+            <a href="#gruposVehiculos">Obtener los grupos de vehículos</a>
+        </li>
+        <li>
+            <a href="#ultimaUbicacionConocidaGrupoVehiculos">Obtener la última ubicación conocida de un grupo de vehículos</a>
+        </li>
+
+    </ul>
+
+
+
+    <h3 id="gruposVehiculos">Obtener los grupos de vehículos</h3>
     <p>GET Base URL/api/v1/gruposVehiculo</p>
     <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/gruposVehiculo</p>
 
-    <h3>Obtener la última ubicación conocida de un grupo de vehículos</h3>
+    <h3 id="ultimaUbicacionConocidaGrupoVehiculos">Obtener la última ubicación conocida de un grupo de vehículos</h3>
     <p>GET Base URL/api/v1/gruposVehiculo/{gruposVehiculoId}/ultimasPosicionesVehiculos</p>
     <p>Donde:
     <br>
