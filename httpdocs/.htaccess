@@ -4,6 +4,6 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteCond %{HTTP_HOST} ^recoleccionbasura.com$
-    RewriteRule ^$ http://recoleccionbasura.com/api [L,R=301]
+    RewriteCond %{HTTP_HOST} ^recoleccionbasura.xalapa.gob.mx$
+    RewriteRule ^$ http://recoleccionbasura.xalapa.gob.mx/api [L,R=301]
 </IfModule>

@@ -7,7 +7,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
@@ -26,10 +26,28 @@
             <li>
                 <a href="#ultimaUbicacionConocidaGrupoVehiculos">Obtener la última ubicación conocida de un grupo de vehículos</a>
             </li>
-
+            <li>
+                <a href="#idVehiculosGrupoVehiculos">Obtener el id de todos los vehículos de un grupo de vehículos</a>
+            </li>
+            <li>
+                <a href="#ultimaUbicacionConocidaVehiculo">Obtener la última ubicación conocida de un vehículo</a>
+            </li>
+            <li>
+                <a href="#rutasRealizadoVehiculo2meses">Obtener las rutas que ha realizado un vehículo en los últimos dos meses</a>
+            </li>
+            <li>
+                <a href="#PosicionesRutaVehiculo">Obtener la lista de posiciones por los que ha pasado un vehículo en una ruta específica</a>
+            </li>
+            <li>
+                <a href="#resumenViajesVehiculoFecha">Obtener el resumen de los viajes de un vehículo en un periodo de fecha dado</a>
+            </li>
+            <li>
+                <a href="#resumenViajesGrupoVehiculoFecha">Obtener el resumen de los viajes de un grupo de vehículos en un periodo de fecha dado</a>
+            </li>
+            <li>
+                <a href="#poligonosSitiosDeInteres">Obtener los polígonos de los sitios de interés</a>
+            </li>
         </ul>
-
-
 
         <h3 id="gruposVehiculos">Obtener los grupos de vehículos</h3>
         <p>GET Base URL/api/v1/gruposVehiculo</p>
@@ -43,7 +61,7 @@
         </p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/gruposVehiculo/1bca1382-b20f-442b-8c68-be29d51ff0f7/ultimasPosicionesVehiculos</p>
 
-        <h3>Obtener el id de todos los vehículos de un grupo de vehículos</h3>
+        <h3 id="idVehiculosGrupoVehiculos">Obtener el id de todos los vehículos de un grupo de vehículos</h3>
         <p>GET Base URL/api/v1/gruposVehiculo/{gruposVehiculoId}/vehiculos</p>
         <p>Donde:
         <br>
@@ -51,7 +69,7 @@
         </p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/gruposVehiculo/1bca1382-b20f-442b-8c68-be29d51ff0f7/vehiculos</p>
 
-        <h3>Obtener la última ubicación conocida de un vehículo</h3>
+        <h3 id ="ultimaUbicacionConocidaVehiculo">Obtener la última ubicación conocida de un vehículo</h3>
         <p>GET Base URL/api/v1/vehiculos/{vehiculoId}/ultimaPosicionVehiculo</p>
         <p>Donde:
         <br>
@@ -59,7 +77,7 @@
         </p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/vehiculos/ae8442e2-82fe-4530-9c79-30ec39fcd15c/ultimaPosicionVehiculo</p>
 
-        <h3>Obtener las rutas que ha realizado un vehículo en los últimos dos meses</h3>
+        <h3 id="rutasRealizadoVehiculo2meses">Obtener las rutas que ha realizado un vehículo en los últimos dos meses</h3>
         <p>GET Base URL/api/v1/vehiculos/{vehiculoId}/viajes</p>
         <p>Donde:
         <br>
@@ -68,9 +86,9 @@
         <p>
         La respuesta contiene una colección de viajes envueltos en un objeto de paginación. Los viajes son regresados en orden cronológico inverso. 
         </p>
-        <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/vehiculos/ae8442e2-82fe-4530-9c79-30ec39fcd15c/viajes</p>
+        <p>Ejemplo de petición: recoleccionbasura.xallistaapa.gob.mx/api/v1/vehiculos/ae8442e2-82fe-4530-9c79-30ec39fcd15c/viajes</p>
 
-        <h3>Obtener la lista de posiciones por los que ha pasado una ruta en específico de un vehículo</h3>
+        <h3 id="PosicionesRutaVehiculo">Obtener la lista de posiciones por los que ha pasado un vehículo en una ruta específica</h3>
         <p> GET Base URL/api/v1/viajes/{viajeId}/posicionesViaje?tiempo={tiempo} </p>
         <p>Donde:
         <br>
@@ -80,7 +98,7 @@
         </p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/viajes/521650679/posicionesViaje?tiempo=true</p>
 
-        <h3>Obtener el resumen de los viajes de un vehículo en un periodo de fecha dado</h3>
+        <h3 id="resumenViajesVehiculoFecha">Obtener el resumen de los viajes de un vehículo en un periodo de fecha dado</h3>
         <p> GET Base URL/api/v1/vehiculos/{vehiculoId}/viajes/resumen?fechaini={fechaInicial}&amp; fechafin={fechaFinal}</p>
         <p>Donde:
         <br>
@@ -90,7 +108,7 @@
         </p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/vehiculos/71727e8f-af2b-4ad9-ab3e-183ffe8470d5/viajes/resumen?fechaini=20150101T002059&amp;fechafin=20160101T002059</p>
 
-        <h3>Obtener el resumen de los viajes de un grupo de vehículos en un periodo de fecha dado</h3>
+        <h3 id="resumenViajesGrupoVehiculoFecha">Obtener el resumen de los viajes de un grupo de vehículos en un periodo de fecha dado</h3>
         <p> GET Base URL/api/v1/gruposVehiculo/{gruposVehiculoId}/viajes/resumen?fechaini={fechaInicial}&amp; fechafin={fechaFinal}</p>
         <p>Donde:
         <br>
@@ -100,7 +118,7 @@
         </p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/gruposVehiculo/1bca1382-b20f-442b-8c68-be29d51ff0f7/viajes/resumen?fechaini=20150101T002059&amp;fechafin=20160101T002059</p>
 
-        <h3>Obtener los polígonos de los sitios de interés</h3>
+        <h3 id="poligonosSitiosDeInteres">Obtener los polígonos de los sitios de interés</h3>
         <p>GET Base URL/api/v1/sitios</p>
         <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/sitios</p>
     </div>
