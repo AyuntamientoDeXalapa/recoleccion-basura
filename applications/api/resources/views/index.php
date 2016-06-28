@@ -11,7 +11,6 @@
     <!-- Latest compiled JavaScript -->
     <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
     <style>
-
         @font-face {
           font-family: 'Gotham-book';
           src: url('static/fonts/gotham-book/Gotham Book.otf');
@@ -32,7 +31,6 @@
             font-weight: normal;
             font-style: normal;
         }
-
         html, body {
             -webkit-font-smoothing: antialiased;
             font-family: 'Gotham-book', sans-serif;
@@ -83,7 +81,7 @@
         </header>
 
         <div class="container">
-            <h1>API Limpia Pública</h1>
+            <h1>API de Limpia Pública Xalapa</h1>
             
             <h3>Descrípción general</h3>
             <p>API diseñada para que cualquier aplicación pueda hacer uso de sus métodos; todas las respuestas son devueltas en formato JSON.
