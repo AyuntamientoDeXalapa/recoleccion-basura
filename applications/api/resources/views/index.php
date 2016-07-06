@@ -83,7 +83,7 @@
         <div class="container">
             <h1>API de Limpia Pública Xalapa</h1>
             
-            <h3>Descrípción general</h3>
+            <h3>Descripción general</h3>
             <p>API diseñada para que cualquier aplicación pueda hacer uso de sus métodos; todas las respuestas son devueltas en formato JSON.
             <br>
             A continuación los métodos disponibles en la versión 1:</p>    
@@ -105,7 +105,7 @@
                     <a href="#rutasRealizadoVehiculo2meses">Obtener las rutas que ha realizado un vehículo en los últimos dos meses</a>
                 </li>
                 <li>
-                    <a href="#PosicionesRutaVehiculo">Obtener la lista de posiciones por los que ha pasado un vehículo en una ruta específica</a>
+                    <a href="#PosicionesRutaVehiculo">Obtener la lista de posiciones por las que ha pasado un vehículo en una ruta específica</a>
                 </li>
                 <li>
                     <a href="#resumenViajesVehiculoFecha">Obtener el resumen de los viajes de un vehículo en un periodo de fecha dado</a>
@@ -117,6 +117,8 @@
                     <a href="#poligonosSitiosDeInteres">Obtener los polígonos de los sitios de interés</a>
                 </li>
             </ul>
+
+             <p> Puedes hacer un fork de esta app <a href="https://github.com/codeandoxalapa/Recoleccion-Basura">aqui</a></p>
 
             <h3 id="gruposVehiculos">Obtener los grupos de vehículos</h3>
             <p>GET Base URL/api/v1/gruposVehiculo</p>
@@ -155,9 +157,9 @@
             <p>
             La respuesta contiene una colección de viajes envueltos en un objeto de paginación. Los viajes son regresados en orden cronológico inverso. 
             </p>
-            <p>Ejemplo de petición: recoleccionbasura.xallistaapa.gob.mx/api/v1/vehiculos/ae8442e2-82fe-4530-9c79-30ec39fcd15c/viajes</p>
+            <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/vehiculos/ae8442e2-82fe-4530-9c79-30ec39fcd15c/viajes</p>
 
-            <h3 id="PosicionesRutaVehiculo">Obtener la lista de posiciones por los que ha pasado un vehículo en una ruta específica</h3>
+            <h3 id="PosicionesRutaVehiculo">Obtener la lista de posiciones por las que ha pasado un vehículo en una ruta específica</h3>
             <p> GET Base URL/api/v1/viajes/{viajeId}/posicionesViaje?tiempo={tiempo} </p>
             <p>Donde:
             <br>
@@ -165,7 +167,7 @@
             <br>
             {tiempo} Parámetro opcional de valor booleano; true para incluír las marcas de tiempo en que pasó por las posiciones (si está disponible). 
             </p>
-            <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/viajes/521650679/posicionesViaje?tiempo=true</p>
+            <p>Ejemplo de petición: recoleccionbasura.xalapa.gob.mx/api/v1/viajes/589773972/posicionesViaje?tiempo=true</p>
 
             <h3 id="resumenViajesVehiculoFecha">Obtener el resumen de los viajes de un vehículo en un periodo de fecha dado</h3>
             <p> GET Base URL/api/v1/vehiculos/{vehiculoId}/viajes/resumen?fechaini={fechaInicial}&amp; fechafin={fechaFinal}</p>

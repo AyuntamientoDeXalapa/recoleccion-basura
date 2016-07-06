@@ -23,40 +23,39 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
-Route::group(['middleware' => ['web','cors']], function () {
+Route::group(['middleware' => ['web']], function () {
 	Route::get('/', function () {
-    return view('index');
+    	return view('index');
 	});
-//API v1
-Route::group(['prefix' => 'v1'], function () {
-	Route::get('gruposVehiculo/', 'GruposVehiculoController@index');
-	
-	Route::get('gruposVehiculo/{grupoId}/ultimasPosicionesVehiculos', 
-		'UltimasPosicionesVehiculosController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
-	
-	Route::get('gruposVehiculo/{grupoId}/vehiculos',
-		'VehiculosController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
+	Route::group(['middleware' => ['cors']], function () {
+	//API v1
+		Route::group(['prefix' => 'v1'], function () {
+			Route::get('gruposVehiculo/', 'GruposVehiculoController@index');
+			Route::get('gruposVehiculo/{grupoId}/ultimasPosicionesVehiculos', 
+				'UltimasPosicionesVehiculosController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
+			
+			Route::get('gruposVehiculo/{grupoId}/vehiculos',
+				'VehiculosController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
 
-	Route::get('vehiculos/{vehiculoId}/ultimaPosicionVehiculo',
-		'UltimaPosicionVehiculoController@index')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
-	
-	Route::get('vehiculos/{vehiculoId}/viajes', 
-		'ViajesController@index')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('vehiculos/{vehiculoId}/ultimaPosicionVehiculo',
+				'UltimaPosicionVehiculoController@index')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
+			
+			Route::get('vehiculos/{vehiculoId}/viajes', 
+				'ViajesController@index')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
 
-	Route::get('viajes/{viajeId}/posicionesViaje', 
-		'PosicionesViajeController@index')->where(array('viajeId' => '[0-9]+'));
+			Route::get('viajes/{viajeId}/posicionesViaje', 
+				'PosicionesViajeController@index')->where(array('viajeId' => '[0-9]+'));
 
-	Route::get('vehiculos/{vehiculoId}/viajes/resumen', 
-		'ResumenController@resumenVehiculo')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('vehiculos/{vehiculoId}/viajes/resumen', 
+				'ResumenController@resumenVehiculo')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
 
-	Route::get('gruposVehiculo/{grupoId}/viajes/resumen',
-		'ResumenController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('gruposVehiculo/{grupoId}/viajes/resumen',
+				'ResumenController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
 
-	Route::get('sitios', 'SitiosController@index');   
+			Route::get('sitios', 'SitiosController@index');   
+			});
 	});
 });
-
 //Route::group(['prefix' => 'v2'], function () {
   //Para la versión 2 del API  
 //});
