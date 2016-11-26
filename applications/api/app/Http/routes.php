@@ -30,29 +30,31 @@ Route::group(['middleware' => ['web']], function () {
 	Route::group(['middleware' => ['cors']], function () {
 	//API v1
 		Route::group(['prefix' => 'v1'], function () {
-			Route::get('gruposVehiculo/', 'GruposVehiculoController@index');
+			Route::get('group/', 'GruposVehiculoController@index');
 			Route::get('gruposVehiculo/{grupoId}/ultimasPosicionesVehiculos', 
 				'UltimasPosicionesVehiculosController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('group/{id}/location', 
+				'UltimasPosicionesVehiculosController@index')->where(array('id' => '[a-zA-Z0-9\-]+'));
 			
-			Route::get('gruposVehiculo/{grupoId}/vehiculos',
-				'VehiculosController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('group/{id}/bus',
+				'VehiculosController@index')->where(array('id' => '[a-zA-Z0-9\-]+'));
 
-			Route::get('vehiculos/{vehiculoId}/ultimaPosicionVehiculo',
-				'UltimaPosicionVehiculoController@index')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('bus/{id}/location',
+				'UltimaPosicionVehiculoController@index')->where(array('id' => '[a-zA-Z0-9\-]+'));
 			
-			Route::get('vehiculos/{vehiculoId}/viajes', 
-				'ViajesController@index')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('bus/{id}/trip', 
+				'ViajesController@index')->where(array('id' => '[a-zA-Z0-9\-]+'));
 
-			Route::get('viajes/{viajeId}/posicionesViaje', 
-				'PosicionesViajeController@index')->where(array('viajeId' => '[0-9]+'));
+			Route::get('trip/{id}/location', 
+				'PosicionesViajeController@index')->where(array('id' => '[0-9]+'));
 
-			Route::get('vehiculos/{vehiculoId}/viajes/resumen', 
-				'ResumenController@resumenVehiculo')->where(array('vehiculoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('bus/{id}/trip/summary', 
+				'ResumenController@resumenVehiculo')->where(array('id' => '[a-zA-Z0-9\-]+'));
 
-			Route::get('gruposVehiculo/{grupoId}/viajes/resumen',
-				'ResumenController@index')->where(array('grupoId' => '[a-zA-Z0-9\-]+'));
+			Route::get('group/{id}/trip/summary',
+				'ResumenController@index')->where(array('id' => '[a-zA-Z0-9\-]+'));
 
-			Route::get('sitios', 'SitiosController@index');   
+			Route::get('place', 'SitiosController@index');   
 			});
 	});
 });
