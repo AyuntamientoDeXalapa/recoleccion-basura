@@ -25,18 +25,18 @@ class ValidateFechaAPIRequest extends Request
     {
         $this->sanitize();
         return [
-                'fechaini' =>'required',
-                'fechafin' => 'required'    
+                'from' =>'required',
+                'to' => 'required'    
         ];
     }
 
     public function sanitize()
     {
         $input = $this->all();      
-        if ($this->has('fechaini') && $this->has('fechafin')){
-            $input['fechaini'] = filter_var($input['fechaini'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW); //FILTER_FLAG_STRIP_LOW Remove characters with ASCII value < 32 
+        if ($this->has('from') && $this->has('to')){
+            $input['from'] = filter_var($input['from'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW); //FILTER_FLAG_STRIP_LOW Remove characters with ASCII value < 32 
             //$input['fechaini'] = filter_var($input['fechaini'], FILTER_FLAG_STRIP_HIGH); No se pudo hacer petición a la API con esta validación (ASCII > 127)
-            $input['fechafin'] = filter_var($input['fechafin'], 
+            $input['to'] = filter_var($input['to'], 
             FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW); 
             $this->replace($input);
         }     

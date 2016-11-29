@@ -11,8 +11,8 @@ class PosicionesViajeController extends Controller
 {
     //
     public function index(Request $request, $viajeId){
-    	if ($request->has('tiempo')){
-    		if ($request->input('tiempo') == 'true'){
+    	if ($request->has('time')){
+    		if ($request->input('time') == 'true'){
 				$response = Api::requestApi('https://us.mzoneweb.net/api/v2/trips/'.$viajeId.'/tripwithpositions.json?timestamps=true');
 				return $response;  		
     		}		

@@ -22,7 +22,7 @@ class ResumenController extends Controller
 			$value = $request->session()->get('errors')->all();
 			return $value;
 		}
-		$response = Api::requestApi('https://us.mzoneweb.net/api/v2/vehiclegroups/'.$grupoVehiculoId.'/trips/'.$request->input('fechaini').'/'.$request->input('fechafin').'/summary.json');
+		$response = Api::requestApi('https://us.mzoneweb.net/api/v2/vehiclegroups/'.$grupoVehiculoId.'/trips/'.$request->input('from').'/'.$request->input('to').'/summary.json');
         return $response;  	
     }
     
@@ -32,7 +32,7 @@ class ResumenController extends Controller
 			$value = $request->session()->get('errors')->all();
 			return $value;
 		}
-		$response = Api::requestApi('https://us.mzoneweb.net/api/v2/vehicles/'.$vehiculoId.'/trips/'.$request->input('fechaini').'/'.$request->input('fechafin').'/summary.json');
+		$response = Api::requestApi('https://us.mzoneweb.net/api/v2/vehicles/'.$vehiculoId.'/trips/'.$request->input('from').'/'.$request->input('to').'/summary.json');
         return $response;	
 	}
 }
