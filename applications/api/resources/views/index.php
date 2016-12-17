@@ -10,6 +10,7 @@
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
     <!-- Latest compiled JavaScript -->
     <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <link rel="shortcut icon" href="static/img/favicon.ico">
     <style>
         @font-face {
           font-family: 'Gotham-book';
@@ -39,6 +40,13 @@
         h1, h3{
             font-family: 'Gotham-black', sans-serif;
         }
+        h1{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .container{
+            padding-left: 9%;
+        }
         .position-absolute{
             position: absolute;
         }
@@ -67,7 +75,7 @@
             display: block;
         }
         .header{
-            padding-bottom: 60px;
+            padding-bottom: 5em;
         }
     </style>
 </head>
